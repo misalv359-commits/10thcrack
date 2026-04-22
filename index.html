@@ -102,9 +102,23 @@
         <button class="chapter-btn" onclick="openPopup()"><span>📜</span> Theorems & Laws</button>
         <button class="back-btn" onclick="showSection('sci-essentials')">⬅ Back</button>
     </div>
-
     <div id="ess-chemistry" class="section">
         <div class="subject-title">Chemistry Essentials</div>
+        <button class="chapter-btn" onclick="openPopup()"><span>⚗️</span> Chemical Equations</button>
+        <button class="chapter-btn" onclick="showSection('periodic-table-view')"><span>📊</span> Periodic Table</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>🧪</span> NCERT Activities</button>
+        <button class="back-btn" onclick="showSection('sci-essentials')">⬅ Back</button>
+    </div>
+
+    <div id="periodic-table-view" class="section">
+        <div class="subject-title">Periodic Table</div>
+        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 20px; border: 1px solid var(--primary); margin-bottom: 20px;">
+            <img src="periodic.jpg" alt="Periodic Table" style="width: 100%; border-radius: 15px; display: block;">
+        </div>
+        <a href="periodic.jpg" download class="btn" style="background: var(--primary); color: #000; border:none; font-weight:bold;">📥 Download Table</a>
+        <button class="back-btn" onclick="showSection('ess-chemistry')">⬅ Back</button>
+    </div>
+
         <button class="chapter-btn" onclick="openPopup()"><span>⚗️</span> Chemical Equations</button>
         <button class="chapter-btn" onclick="openPopup()"><span>📊</span> Periodic Table</button>
         <button class="chapter-btn" onclick="openPopup()"><span>🧪</span> NCERT Activities</button>
