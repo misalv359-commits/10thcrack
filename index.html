@@ -87,13 +87,26 @@
         <button class="back-btn" onclick="showSection('home')">⬅ Back to Home</button>
     </div>
 
-    <div id="sci-essentials" class="section">
+        <div id="sci-essentials" class="section">
         <div class="subject-title">Science Essentials</div>
+        <button class="btn" style="background: linear-gradient(to right, #ec4899, #7303c0); border: none;" onclick="showSection('sci-acp')">🔥 ACP Modules (Science)</button>
+        
         <button class="btn" onclick="showSection('ess-physics')">⚡ Physics Material</button>
         <button class="btn" onclick="showSection('ess-chemistry')">🧪 Chemistry Material</button>
         <button class="btn" onclick="showSection('ess-biology')">🧬 Biology Material</button>
         <button class="back-btn" onclick="showSection('study-material')">⬅ Back</button>
     </div>
+
+    <div id="sci-acp" class="section">
+        <div class="subject-title">Science ACP</div>
+        <div class="sub-heading">Practice Modules</div>
+        
+        <button class="chapter-btn" onclick="openPopup()"><span>📁</span> ACP Module 01</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>📁</span> ACP Module 02</button>
+        
+        <button class="back-btn" onclick="showSection('sci-essentials')">⬅ Back</button>
+    </div>
+
 
     <div id="ess-physics" class="section">
         <div class="subject-title">Physics Essentials</div>
