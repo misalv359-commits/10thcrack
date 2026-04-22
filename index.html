@@ -25,16 +25,9 @@
         }
 
         .container {
-            position: relative; 
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.1); 
-            padding: 40px 20px; 
-            border-radius: 30px;
-            text-align: center; 
-            max-width: 480px; 
-            width: 100%; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            position: relative; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.1); padding: 40px 20px; border-radius: 30px;
+            text-align: center; max-width: 480px; width: 100%; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
             margin-top: 20px;
         }
 
@@ -52,7 +45,6 @@
         .btn { display: block; background: rgba(255, 255, 255, 0.08); color: var(--text); padding: 18px; margin: 12px 0; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; cursor: pointer; width: 100%; text-align: center; }
         .btn:active { transform: scale(0.97); background: rgba(250, 204, 21, 0.2); }
 
-        /* Chapters White List Style */
         .chapter-btn { background: none; border: 1px solid rgba(255,255,255,0.15); color: #fff; text-align: left; padding: 16px; margin: 8px 0; font-size: 1rem; font-weight: 500; border-radius: 12px; width: 100%; cursor: pointer; display: block; }
         .chapter-btn span { color: var(--primary); font-weight: 800; margin-right: 12px; }
 
@@ -88,6 +80,44 @@
         <button class="back-btn" onclick="showSection('home')">⬅ Back to Home</button>
     </div>
 
+    <div id="study-material" class="section">
+        <div class="subject-title">Study Material</div>
+        <button class="btn" onclick="openPopup()">📁 Maths Modules</button>
+        <button class="btn" onclick="showSection('sci-essentials')">🧪 Science Essentials</button>
+        <button class="back-btn" onclick="showSection('home')">⬅ Back to Home</button>
+    </div>
+
+    <div id="sci-essentials" class="section">
+        <div class="subject-title">Science Essentials</div>
+        <button class="btn" onclick="showSection('ess-physics')">⚡ Physics Material</button>
+        <button class="btn" onclick="showSection('ess-chemistry')">🧪 Chemistry Material</button>
+        <button class="btn" onclick="showSection('ess-biology')">🧬 Biology Material</button>
+        <button class="back-btn" onclick="showSection('study-material')">⬅ Back</button>
+    </div>
+
+    <div id="ess-physics" class="section">
+        <div class="subject-title">Physics Essentials</div>
+        <button class="chapter-btn" onclick="openPopup()"><span>📏</span> Physics Formulas</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>📐</span> All Ray Diagrams</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>📜</span> Theorems & Laws</button>
+        <button class="back-btn" onclick="showSection('sci-essentials')">⬅ Back</button>
+    </div>
+
+    <div id="ess-chemistry" class="section">
+        <div class="subject-title">Chemistry Essentials</div>
+        <button class="chapter-btn" onclick="openPopup()"><span>⚗️</span> Chemical Equations</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>📊</span> Periodic Table</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>🧪</span> NCERT Activities</button>
+        <button class="back-btn" onclick="showSection('sci-essentials')">⬅ Back</button>
+    </div>
+
+    <div id="ess-biology" class="section">
+        <div class="subject-title">Biology Essentials</div>
+        <button class="chapter-btn" onclick="openPopup()"><span>🎨</span> All Important Diagrams</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>🧪</span> Life Processes Activities</button>
+        <button class="back-btn" onclick="showSection('sci-essentials')">⬅ Back</button>
+    </div>
+
     <div id="sst" class="section">
         <div class="subject-title">Social Science</div>
         <div class="sub-heading">History</div>
@@ -96,7 +126,6 @@
         <button class="chapter-btn" onclick="openPopup()"><span>03</span> The Making of a Global World</button>
         <button class="chapter-btn" onclick="openPopup()"><span>04</span> The Age of Industrialisation</button>
         <button class="chapter-btn" onclick="openPopup()"><span>05</span> Print Culture & Modern World</button>
-
         <div class="sub-heading">Geography</div>
         <button class="chapter-btn" onclick="openPopup()"><span>01</span> Resources and Development</button>
         <button class="chapter-btn" onclick="openPopup()"><span>02</span> Forest and Wildlife Resources</button>
@@ -105,20 +134,17 @@
         <button class="chapter-btn" onclick="openPopup()"><span>05</span> Minerals and Energy Resources</button>
         <button class="chapter-btn" onclick="openPopup()"><span>06</span> Manufacturing Industries</button>
         <button class="chapter-btn" onclick="openPopup()"><span>07</span> Lifelines of National Economy</button>
-
         <div class="sub-heading">Civics</div>
         <button class="chapter-btn" onclick="openPopup()"><span>01</span> Power Sharing</button>
         <button class="chapter-btn" onclick="openPopup()"><span>02</span> Federalism</button>
         <button class="chapter-btn" onclick="openPopup()"><span>03</span> Gender, Religion and Caste</button>
         <button class="chapter-btn" onclick="openPopup()"><span>04</span> Political Parties</button>
         <button class="chapter-btn" onclick="openPopup()"><span>05</span> Outcomes of Democracy</button>
-
         <div class="sub-heading">Economics</div>
         <button class="chapter-btn" onclick="openPopup()"><span>01</span> Development</button>
         <button class="chapter-btn" onclick="openPopup()"><span>02</span> Sectors of the Indian Economy</button>
         <button class="chapter-btn" onclick="openPopup()"><span>03</span> Money and Credit</button>
         <button class="chapter-btn" onclick="openPopup()"><span>04</span> Globalization & Indian Economy</button>
-
         <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
     </div>
 
@@ -176,8 +202,11 @@
 <script>
     function showSection(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        window.scrollTo(0,0);
+        const target = document.getElementById(id);
+        if(target) {
+            target.classList.add('active');
+            window.scrollTo(0,0);
+        }
     }
     function openPopup() { document.getElementById('popupOverlay').style.display = 'flex'; }
     function closePopup() { document.getElementById('popupOverlay').style.display = 'none'; }
