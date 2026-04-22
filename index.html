@@ -5,173 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10th Crack | Next Toppers</title>
     <style>
-        :root { --bg: #03001e; --primary: #facc15; --secondary: #ec4899; --text: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
+        :root { 
+            --bg: #050505; 
+            --card-bg: #121212;
+            --primary: #facc15; 
+            --secondary: #ec4899; 
+            --text: #ffffff; 
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
         
-        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 20px; }
+        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; padding: 20px; }
 
-        .container {
-            position: relative; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.1); padding: 40px 20px; border-radius: 30px;
-            text-align: center; max-width: 480px; width: 100%; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            margin-top: 20px;
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            background: var(--card-bg);
+            border-radius: 35px;
+            padding: 30px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
 
-        h1 { font-size: 2.2rem; font-weight: 800; color: var(--text); text-shadow: 0 0 15px var(--primary); margin-bottom: 25px; text-transform: uppercase; }
+        h1 { font-size: 2.2rem; font-weight: 900; text-align: center; color: var(--primary); margin-bottom: 30px; letter-spacing: -1px; }
         
-        .subject-title { color: var(--primary); font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin: 25px 0 15px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; display: inline-block; }
+        /* Subject Header */
+        .subject-header { 
+            font-size: 1.6rem; font-weight: 800; color: var(--primary); 
+            margin: 25px 0 15px; text-transform: uppercase; border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
         
-        .sub-title { color: #22d3ee; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; margin: 20px 0 10px; text-align: left; padding-left: 10px; border-left: 3px solid #22d3ee; }
+        .unit-tag {
+            color: #22d3ee; font-size: 0.9rem; font-weight: 700; margin-top: 20px;
+            text-transform: uppercase; letter-spacing: 1px; display: block;
+        }
 
-        /* Navigation Sections Control */
-        .section { display: none; width: 100%; }
-        .section.active { display: block !important; }
-
-        /* Main Menu Buttons */
-        .btn { display: block; background: rgba(255, 255, 255, 0.08); color: var(--text); padding: 18px; margin: 12px 0; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.2s; cursor: pointer; width: 100%; text-align: center; position: relative; z-index: 5; }
-        .btn:active { transform: scale(0.96); background: rgba(250, 204, 21, 0.2); }
+        .section { display: none; width: 100%; animation: slideIn 0.3s ease-out; }
+        .section.active { display: block; }
         
-        /* Chapters White List Style */
-        .chapter-btn { background: none; border: 1px solid rgba(255,255,255,0.15); color: #fff; text-align: left; padding: 16px; margin: 8px 0; font-size: 1rem; font-weight: 500; border-radius: 12px; width: 100%; cursor: pointer; display: block; }
-        .chapter-btn:active { background: rgba(255,255,255,0.1); }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 
-        .back-btn { background: var(--secondary); padding: 12px 25px; font-size: 0.85rem; border-radius: 12px; margin: 25px auto 0; display: inline-block; cursor: pointer; font-weight: bold; border: none; color: white; }
+        /* Modern Glass Buttons */
+        .menu-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .menu-card:active { transform: scale(0.97); background: rgba(255,255,255,0.1); }
+        .menu-card h3 { font-size: 1.1rem; font-weight: 600; }
+
+        /* Chapter List Style */
+        .chapter-row {
+            background: none;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 18px 10px;
+            width: 100%;
+            text-align: left;
+            color: #ccc;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            transition: 0.2s;
+        }
+        .chapter-row span { color: var(--primary); font-weight: bold; margin-right: 12px; }
+        .chapter-row:active { color: #fff; background: rgba(255,255,255,0.02); }
+
+        .back-nav { color: var(--secondary); font-weight: 700; cursor: pointer; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; }
 
         /* Popup */
-        #popupOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); z-index: 1000; justify-content: center; align-items: center; }
-        .popup { background: #111; border: 2px solid var(--primary); padding: 35px; border-radius: 25px; width: 85%; max-width: 340px; text-align: center; }
-
-        footer { margin-top: 40px; color: #64748b; font-size: 0.75rem; padding-bottom: 20px; }
+        #popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+        .popup-box { background: #1a1a1a; padding: 30px; border-radius: 25px; border: 1px solid var(--primary); text-align: center; width: 100%; max-width: 300px; }
     </style>
 </head>
 <body>
 
-<div id="popupOverlay" onclick="closePopup()">
-    <div class="popup" onclick="event.stopPropagation()">
-        <p style="font-size: 1.3rem; font-weight: bold; color: #fff; margin-bottom: 20px;">Oye Ladle! 👻<br><br>Material Upload ho rha hai!<br>Tab tak padhai krle 👻</p>
-        <button class="btn" style="background: var(--primary); color: #000; border:none;" onclick="closePopup()">Ok Bhai!</button>
+<div id="popup" onclick="this.style.display='none'">
+    <div class="popup-box">
+        <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;">Ladle! 👻<br>Material Upload ho rha hai.</p>
+        <button style="background:var(--primary); border:none; padding:10px 20px; border-radius:10px; font-weight:bold;">Ok Bhai</button>
     </div>
 </div>
 
-<div class="container">
+<div class="app-container">
+    
     <div id="home" class="section active">
-        <h1>🚀 10th Crack</h1>
-        <button class="btn" onclick="showSection('subjects')">🔥 Daily Important Questions</button>
-        <button class="btn" onclick="showSection('study-material')">📚 Study Material</button>
+        <h1>🚀 10TH CRACK</h1>
+        <div class="menu-card" onclick="showSection('subjects')">
+            <div>
+                <h3>Daily Important Ques</h3>
+                <p style="font-size: 0.8rem; color: #888;">Chapter-wise Important DPPs</p>
+            </div>
+            <span>🔥</span>
+        </div>
+        <div class="menu-card" onclick="showSection('study-material')">
+            <div>
+                <h3>Study Material</h3>
+                <p style="font-size: 0.8rem; color: #888;">Notes, Diagrams & Formulas</p>
+            </div>
+            <span>📚</span>
+        </div>
     </div>
 
     <div id="subjects" class="section">
-        <div class="subject-title">SELECT SUBJECT</div>
-        <button class="btn" onclick="showSection('maths-chapters')">🔢 Mathematics</button>
-        <button class="btn" onclick="showSection('sci-chapters')">📖 Science</button>
-        <button class="btn" onclick="showSection('sst-chapters')">🌍 Social Science</button>
-        <button class="back-btn" onclick="showSection('home')">⬅ Back to Home</button>
+        <span class="back-nav" onclick="showSection('home')">← HOME</span>
+        <div class="subject-header">SELECT SUBJECT</div>
+        <div class="menu-card" onclick="showSection('maths')"><h3>Mathematics</h3><span>🔢</span></div>
+        <div class="menu-card" onclick="showSection('science')"><h3>Science</h3><span>📖</span></div>
+        <div class="menu-card" onclick="showSection('sst')"><h3>Social Science</h3><span>🌍</span></div>
     </div>
 
-    <div id="study-material" class="section">
-        <div class="subject-title">STUDY MATERIAL</div>
-        <button class="btn" onclick="openPopup()">📁 Maths Modules</button>
-        <button class="btn" onclick="showSection('sci-essentials-select')">🧪 Science - Essentials</button>
-        <button class="back-btn" onclick="showSection('home')">⬅ Back to Home</button>
+    <div id="maths" class="section">
+        <span class="back-nav" onclick="showSection('subjects')">← BACK</span>
+        <div class="subject-header">MATHEMATICS</div>
+        <div class="chapter-row" onclick="showSection('real-numbers')"><span>01</span> Real Numbers</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Polynomials</div>
+        <div class="chapter-row" onclick="openP()"><span>03</span> Pair of Linear Equations</div>
+        <div class="chapter-row" onclick="openP()"><span>04</span> Quadratic Equations</div>
+        <div class="chapter-row" onclick="openP()"><span>05</span> Arithmetic Progressions</div>
+        <div class="chapter-row" onclick="openP()"><span>06</span> Triangles</div>
+        <div class="chapter-row" onclick="openP()"><span>07</span> Coordinate Geometry</div>
+        <div class="chapter-row" onclick="openP()"><span>08</span> Introduction to Trigonometry</div>
+        <div class="chapter-row" onclick="openP()"><span>09</span> Applications of Trigonometry</div>
+        <div class="chapter-row" onclick="openP()"><span>10</span> Circles</div>
+        <div class="chapter-row" onclick="openP()"><span>11</span> Areas Related to Circles</div>
+        <div class="chapter-row" onclick="openP()"><span>12</span> Surface Areas & Volumes</div>
+        <div class="chapter-row" onclick="openP()"><span>13</span> Statistics</div>
+        <div class="chapter-row" onclick="openP()"><span>14</span> Probability</div>
     </div>
 
-    <div id="sci-essentials-select" class="section">
-        <div class="subject-title">SCIENCE ESSENTIALS</div>
-        <button class="btn" onclick="showSection('bio-essentials')">🧬 Biology</button>
-        <button class="btn" onclick="showSection('chem-essentials')">🧪 Chemistry</button>
-        <button class="btn" onclick="showSection('phy-essentials')">⚡ Physics</button>
-        <button class="back-btn" onclick="showSection('study-material')">⬅ Back</button>
+    <div id="science" class="section">
+        <span class="back-nav" onclick="showSection('subjects')">← BACK</span>
+        <div class="subject-header">SCIENCE</div>
+        
+        <span class="unit-tag">Chemistry</span>
+        <div class="chapter-row" onclick="openP()"><span>01</span> Chemical Reactions & Eq.</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Acids, Bases and Salts</div>
+        <div class="chapter-row" onclick="openP()"><span>03</span> Metals and Non-metals</div>
+        <div class="chapter-row" onclick="openP()"><span>04</span> Carbon & its Compounds</div>
+
+        <span class="unit-tag">Biology</span>
+        <div class="chapter-row" onclick="openP()"><span>05</span> Life Processes</div>
+        <div class="chapter-row" onclick="openP()"><span>06</span> Control and Coordination</div>
+        <div class="chapter-row" onclick="openP()"><span>07</span> How do Organisms Reproduce?</div>
+        <div class="chapter-row" onclick="openP()"><span>08</span> Heredity</div>
+
+        <span class="unit-tag">Physics</span>
+        <div class="chapter-row" onclick="openP()"><span>09</span> Light Reflection & Refraction</div>
+        <div class="chapter-row" onclick="openP()"><span>10</span> Human Eye & Colourful World</div>
+        <div class="chapter-row" onclick="openP()"><span>11</span> Electricity</div>
+        <div class="chapter-row" onclick="openP()"><span>12</span> Magnetic Effects of Current</div>
+        
+        <span class="unit-tag">Environmental Science</span>
+        <div class="chapter-row" onclick="openP()"><span>13</span> Our Environment</div>
     </div>
 
-    <div id="bio-essentials" class="section"><div class="subject-title">BIOLOGY</div><button class="btn" onclick="openPopup()">📑 Equations</button><button class="btn" onclick="openPopup()">🧪 Activities</button><button class="btn" onclick="openPopup()">🎨 Diagrams</button><button class="back-btn" onclick="showSection('sci-essentials-select')">⬅ Back</button></div>
-    <div id="chem-essentials" class="section"><div class="subject-title">CHEMISTRY</div><button class="btn" onclick="openPopup()">⚗️ Equations</button><button class="btn" onclick="openPopup()">📏 Formulas</button><button class="btn" onclick="openPopup()">🧪 Activities</button><button class="btn" onclick="openPopup()">📊 Periodic Table</button><button class="back-btn" onclick="showSection('sci-essentials-select')">⬅ Back</button></div>
-    <div id="phy-essentials" class="section"><div class="subject-title">PHYSICS</div><button class="btn" onclick="openPopup()">📏 Formulas</button><button class="btn" onclick="openPopup()">💡 Activities</button><button class="btn" onclick="openPopup()">📜 Theorems</button><button class="btn" onclick="openPopup()">📑 Equations</button><button class="btn" onclick="openPopup()">📐 Diagrams</button><button class="back-btn" onclick="showSection('sci-essentials-select')">⬅ Back</button></div>
-
-    <div id="maths-chapters" class="section">
-        <div class="subject-title">MATHEMATICS</div>
-        <button class="chapter-btn" onclick="showSection('hub-real-numbers')">01. Real Numbers</button>
-        <button class="chapter-btn" onclick="openPopup()">02. Polynomials</button>
-        <button class="chapter-btn" onclick="openPopup()">03. Pair of Linear Equations</button>
-        <button class="chapter-btn" onclick="openPopup()">04. Quadratic Equations</button>
-        <button class="chapter-btn" onclick="openPopup()">05. Arithmetic Progressions</button>
-        <button class="chapter-btn" onclick="openPopup()">06. Triangles</button>
-        <button class="chapter-btn" onclick="openPopup()">07. Coordinate Geometry</button>
-        <button class="chapter-btn" onclick="openPopup()">08. Introduction to Trigonometry</button>
-        <button class="chapter-btn" onclick="openPopup()">09. Some App. of Trigonometry</button>
-        <button class="chapter-btn" onclick="openPopup()">10. Circles</button>
-        <button class="chapter-btn" onclick="openPopup()">11. Areas Related to Circles</button>
-        <button class="chapter-btn" onclick="openPopup()">12. Surface Areas & Volumes</button>
-        <button class="chapter-btn" onclick="openPopup()">13. Statistics</button>
-        <button class="chapter-btn" onclick="openPopup()">14. Probability</button>
-        <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
+    <div id="sst" class="section">
+        <span class="back-nav" onclick="showSection('subjects')">← BACK</span>
+        <div class="subject-header">SOCIAL SCIENCE</div>
+        <span class="unit-tag">History</span>
+        <div class="chapter-row" onclick="openP()"><span>01</span> Rise of Nationalism in Europe</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Nationalism in India</div>
+        <span class="unit-tag">Civics</span>
+        <div class="chapter-row" onclick="openP()"><span>01</span> Power Sharing</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Federalism</div>
+        <span class="unit-tag">Economics</span>
+        <div class="chapter-row" onclick="openP()"><span>01</span> Development</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Sectors of Indian Economy</div>
     </div>
 
-    <div id="sci-chapters" class="section">
-        <div class="subject-title">SCIENCE</div>
-        <div class="sub-title">Chemistry</div>
-        <button class="chapter-btn" onclick="openPopup()">01. Chemical Reactions & Eq.</button>
-        <button class="chapter-btn" onclick="openPopup()">02. Acids, Bases and Salts</button>
-        <button class="chapter-btn" onclick="openPopup()">03. Metals and Non-metals</button>
-        <button class="chapter-btn" onclick="openPopup()">04. Carbon & its Compounds</button>
-        <div class="sub-title">Biology</div>
-        <button class="chapter-btn" onclick="openPopup()">05. Life Processes</button>
-        <button class="chapter-btn" onclick="openPopup()">06. Control and Coordination</button>
-        <button class="chapter-btn" onclick="openPopup()">07. How do Organisms Reproduce?</button>
-        <button class="chapter-btn" onclick="openPopup()">08. Heredity</button>
-        <div class="sub-title">Physics</div>
-        <button class="chapter-btn" onclick="openPopup()">09. Light Reflection & Refraction</button>
-        <button class="chapter-btn" onclick="openPopup()">10. Human Eye & Colourful World</button>
-        <button class="chapter-btn" onclick="openPopup()">11. Electricity</button>
-        <button class="chapter-btn" onclick="openPopup()">12. Magnetic Effects of Current</button>
-        <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
+    <div id="real-numbers" class="section">
+        <span class="back-nav" onclick="showSection('maths')">← CHAPTERS</span>
+        <div class="subject-header">REAL NUMBERS</div>
+        <a href="https://drive.google.com/file/d/1KjANwkFYKwob_ukK2KZ3uqrMA7ewOwgS/view" target="_blank" class="menu-card">
+            <div><h3>DPP 01</h3><p>Important Questions</p></div>
+        </a>
+        <a href="https://drive.google.com/file/d/1DoDAxWnjq4Yg2UMvyT-4wODN3L1xXOV5/view" target="_blank" class="menu-card">
+            <div><h3>DPP 02</h3><p>Previous Year Questions</p></div>
+        </a>
     </div>
 
-    <div id="sst-chapters" class="section">
-        <div class="subject-title">SOCIAL SCIENCE</div>
-        <div class="sub-title">History</div>
-        <button class="chapter-btn" onclick="openPopup()">01. Rise of Nationalism Europe</button>
-        <button class="chapter-btn" onclick="openPopup()">02. Nationalism in India</button>
-        <div class="sub-title">Geography</div>
-        <button class="chapter-btn" onclick="openPopup()">01. Resources and Development</button>
-        <button class="chapter-btn" onclick="openPopup()">04. Agriculture</button>
-        <div class="sub-title">Civics</div>
-        <button class="chapter-btn" onclick="openPopup()">01. Power Sharing</button>
-        <button class="chapter-btn" onclick="openPopup()">02. Federalism</button>
-        <div class="sub-title">Economics</div>
-        <button class="chapter-btn" onclick="openPopup()">01. Development</button>
-        <button class="chapter-btn" onclick="openPopup()">02. Sectors of Indian Economy</button>
-        <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
-    </div>
+    <footer style="text-align:center; margin-top:30px; font-size:0.7rem; color:#444;">
+        © 2026 Next Toppers | Academic Session 2026-27
+    </footer>
 
-    <div id="hub-real-numbers" class="section">
-        <div class="subject-title">REAL NUMBERS</div>
-        <button class="btn" onclick="openPopup()">📝 Theory Notes</button>
-        <button class="btn" onclick="openPopup()">📂 Important DPPs</button>
-        <button class="back-btn" onclick="showSection('maths-chapters')">⬅ Back</button>
-    </div>
-
-    <footer>Made for Next Toppers students | 2026-27</footer>
 </div>
 
 <script>
-    // Pure navigation logic
     function showSection(id) {
-        // Sabhi sections se active class hatao
-        const sections = document.getElementsByClassName('section');
-        for (let i = 0; i < sections.length; i++) {
-            sections[i].classList.remove('active');
-        }
-        
-        // Target section ko dikhao
-        const target = document.getElementById(id);
-        if (target) {
-            target.classList.add('active');
-            window.scrollTo(0, 0); // Click ke baad upar scroll ho jayega
-        }
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
     }
-
-    function openPopup() { document.getElementById('popupOverlay').style.display = 'flex'; }
-    function closePopup() { document.getElementById('popupOverlay').style.display = 'none'; }
+    function openP() { document.getElementById('popup').style.display = 'flex'; }
 </script>
 
 </body>
