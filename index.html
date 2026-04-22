@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10th Crack | Next Toppers</title>
+    <title>10th Crack | Mission 2026-27</title>
     <style>
         :root { 
             --bg: #050505; 
-            --card-bg: #121212;
+            --card-bg: #111111;
             --primary: #facc15; 
             --secondary: #ec4899; 
             --text: #ffffff; 
@@ -27,9 +27,8 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
 
-        h1 { font-size: 2.2rem; font-weight: 900; text-align: center; color: var(--primary); margin-bottom: 30px; letter-spacing: -1px; }
+        h1 { font-size: 2.2rem; font-weight: 900; text-align: center; color: var(--primary); margin-bottom: 30px; letter-spacing: -1px; text-shadow: 0 0 15px rgba(250, 204, 21, 0.3); }
         
-        /* Subject Header */
         .subject-header { 
             font-size: 1.6rem; font-weight: 800; color: var(--primary); 
             margin: 25px 0 15px; text-transform: uppercase; border-left: 5px solid var(--primary);
@@ -37,61 +36,72 @@
         }
         
         .unit-tag {
-            color: #22d3ee; font-size: 0.9rem; font-weight: 700; margin-top: 20px;
-            text-transform: uppercase; letter-spacing: 1px; display: block;
+            color: #fb7185; font-size: 0.9rem; font-weight: 800; margin-top: 25px;
+            text-transform: uppercase; letter-spacing: 1px; display: block; border-bottom: 1px solid rgba(251, 113, 133, 0.2); padding-bottom: 5px;
         }
 
-        .section { display: none; width: 100%; animation: slideIn 0.3s ease-out; }
+        .section { display: none; width: 100%; animation: fadeIn 0.3s ease-out; }
         .section.active { display: block; }
         
-        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Modern Glass Buttons */
+        /* Premium Buttons - No Blue */
         .menu-card {
             background: var(--glass);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 20px;
+            padding: 22px;
+            border-radius: 22px;
             margin-bottom: 15px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .menu-card:active { transform: scale(0.97); background: rgba(255,255,255,0.1); }
-        .menu-card h3 { font-size: 1.1rem; font-weight: 600; }
+        .menu-card:active { transform: scale(0.96); background: rgba(255,255,255,0.08); }
+        .menu-card h3 { font-size: 1.1rem; font-weight: 700; color: #fff; }
+        .menu-card p { font-size: 0.8rem; color: #94a3b8; margin-top: 4px; }
 
-        /* Chapter List Style */
+        /* Chapter List - Professional White */
         .chapter-row {
             background: none;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             padding: 18px 10px;
             width: 100%;
             text-align: left;
-            color: #ccc;
+            color: #e2e8f0;
             font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             transition: 0.2s;
         }
-        .chapter-row span { color: var(--primary); font-weight: bold; margin-right: 12px; }
-        .chapter-row:active { color: #fff; background: rgba(255,255,255,0.02); }
+        .chapter-row span { color: var(--primary); font-weight: 800; margin-right: 15px; font-size: 0.9rem; }
+        .chapter-row:active { background: rgba(250, 204, 21, 0.05); color: var(--primary); }
 
-        .back-nav { color: var(--secondary); font-weight: 700; cursor: pointer; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; }
+        .back-nav { color: var(--secondary); font-weight: 800; cursor: pointer; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; }
 
-        /* Popup */
-        #popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
-        .popup-box { background: #1a1a1a; padding: 30px; border-radius: 25px; border: 1px solid var(--primary); text-align: center; width: 100%; max-width: 300px; }
+        /* DPP Specific Button (Changed from Blue to Premium Gold/Glass) */
+        .dpp-btn {
+            background: linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(0,0,0,0));
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        #popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(5px); }
+        .popup-box { background: #161616; padding: 35px; border-radius: 30px; border: 1px solid var(--primary); text-align: center; width: 100%; max-width: 320px; }
+        
+        footer { text-align: center; margin-top: 40px; font-size: 0.75rem; color: #475569; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
 <div id="popup" onclick="this.style.display='none'">
     <div class="popup-box">
-        <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;">Ladle! 👻<br>Material Upload ho rha hai.</p>
-        <button style="background:var(--primary); border:none; padding:10px 20px; border-radius:10px; font-weight:bold;">Ok Bhai</button>
+        <p style="font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 25px;">Oye Ladle! 👻<br><br><span style="font-weight: 400; color: #94a3b8; font-size: 1rem;">Material Upload ho rha hai... Tab tak padhai krle!</span></p>
+        <button style="background:var(--primary); border:none; padding:12px 30px; border-radius:15px; font-weight:900; color:#000; cursor:pointer;">OK BHAI!</button>
     </div>
 </div>
 
@@ -100,113 +110,96 @@
     <div id="home" class="section active">
         <h1>🚀 10TH CRACK</h1>
         <div class="menu-card" onclick="showSection('subjects')">
-            <div>
-                <h3>Daily Important Ques</h3>
-                <p style="font-size: 0.8rem; color: #888;">Chapter-wise Important DPPs</p>
-            </div>
+            <div><h3>Daily Important Ques</h3><p>Chapter-wise DPPs & Solutions</p></div>
             <span>🔥</span>
         </div>
         <div class="menu-card" onclick="showSection('study-material')">
-            <div>
-                <h3>Study Material</h3>
-                <p style="font-size: 0.8rem; color: #888;">Notes, Diagrams & Formulas</p>
-            </div>
+            <div><h3>Study Material</h3><p>Pro Notes & Exam Essentials</p></div>
             <span>📚</span>
         </div>
     </div>
 
     <div id="subjects" class="section">
-        <span class="back-nav" onclick="showSection('home')">← HOME</span>
-        <div class="subject-header">SELECT SUBJECT</div>
+        <span class="back-nav" onclick="showSection('home')">← Home</span>
+        <div class="subject-header">Select Subject</div>
         <div class="menu-card" onclick="showSection('maths')"><h3>Mathematics</h3><span>🔢</span></div>
-        <div class="menu-card" onclick="showSection('science')"><h3>Science</h3><span>📖</span></div>
+        <div class="menu-card" onclick="showSection('science')"><h3>Science</h3><span>🧪</span></div>
         <div class="menu-card" onclick="showSection('sst')"><h3>Social Science</h3><span>🌍</span></div>
     </div>
 
-    <div id="maths" class="section">
-        <span class="back-nav" onclick="showSection('subjects')">← BACK</span>
-        <div class="subject-header">MATHEMATICS</div>
-        <div class="chapter-row" onclick="showSection('real-numbers')"><span>01</span> Real Numbers</div>
-        <div class="chapter-row" onclick="openP()"><span>02</span> Polynomials</div>
-        <div class="chapter-row" onclick="openP()"><span>03</span> Pair of Linear Equations</div>
-        <div class="chapter-row" onclick="openP()"><span>04</span> Quadratic Equations</div>
-        <div class="chapter-row" onclick="openP()"><span>05</span> Arithmetic Progressions</div>
-        <div class="chapter-row" onclick="openP()"><span>06</span> Triangles</div>
-        <div class="chapter-row" onclick="openP()"><span>07</span> Coordinate Geometry</div>
-        <div class="chapter-row" onclick="openP()"><span>08</span> Introduction to Trigonometry</div>
-        <div class="chapter-row" onclick="openP()"><span>09</span> Applications of Trigonometry</div>
-        <div class="chapter-row" onclick="openP()"><span>10</span> Circles</div>
-        <div class="chapter-row" onclick="openP()"><span>11</span> Areas Related to Circles</div>
-        <div class="chapter-row" onclick="openP()"><span>12</span> Surface Areas & Volumes</div>
-        <div class="chapter-row" onclick="openP()"><span>13</span> Statistics</div>
-        <div class="chapter-row" onclick="openP()"><span>14</span> Probability</div>
-    </div>
-
-    <div id="science" class="section">
-        <span class="back-nav" onclick="showSection('subjects')">← BACK</span>
-        <div class="subject-header">SCIENCE</div>
-        
-        <span class="unit-tag">Chemistry</span>
-        <div class="chapter-row" onclick="openP()"><span>01</span> Chemical Reactions & Eq.</div>
-        <div class="chapter-row" onclick="openP()"><span>02</span> Acids, Bases and Salts</div>
-        <div class="chapter-row" onclick="openP()"><span>03</span> Metals and Non-metals</div>
-        <div class="chapter-row" onclick="openP()"><span>04</span> Carbon & its Compounds</div>
-
-        <span class="unit-tag">Biology</span>
-        <div class="chapter-row" onclick="openP()"><span>05</span> Life Processes</div>
-        <div class="chapter-row" onclick="openP()"><span>06</span> Control and Coordination</div>
-        <div class="chapter-row" onclick="openP()"><span>07</span> How do Organisms Reproduce?</div>
-        <div class="chapter-row" onclick="openP()"><span>08</span> Heredity</div>
-
-        <span class="unit-tag">Physics</span>
-        <div class="chapter-row" onclick="openP()"><span>09</span> Light Reflection & Refraction</div>
-        <div class="chapter-row" onclick="openP()"><span>10</span> Human Eye & Colourful World</div>
-        <div class="chapter-row" onclick="openP()"><span>11</span> Electricity</div>
-        <div class="chapter-row" onclick="openP()"><span>12</span> Magnetic Effects of Current</div>
-        
-        <span class="unit-tag">Environmental Science</span>
-        <div class="chapter-row" onclick="openP()"><span>13</span> Our Environment</div>
-    </div>
-
     <div id="sst" class="section">
-        <span class="back-nav" onclick="showSection('subjects')">← BACK</span>
-        <div class="subject-header">SOCIAL SCIENCE</div>
+        <span class="back-nav" onclick="showSection('subjects')">← Back</span>
+        <div class="subject-header">Social Science</div>
+        
         <span class="unit-tag">History</span>
         <div class="chapter-row" onclick="openP()"><span>01</span> Rise of Nationalism in Europe</div>
         <div class="chapter-row" onclick="openP()"><span>02</span> Nationalism in India</div>
-        <span class="unit-tag">Civics</span>
+        <div class="chapter-row" onclick="openP()"><span>03</span> The Making of a Global World</div>
+        <div class="chapter-row" onclick="openP()"><span>04</span> The Age of Industrialisation</div>
+        <div class="chapter-row" onclick="openP()"><span>05</span> Print Culture & Modern World</div>
+
+        <span class="unit-tag">Geography</span>
+        <div class="chapter-row" onclick="openP()"><span>01</span> Resources and Development</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Forest and Wildlife Resources</div>
+        <div class="chapter-row" onclick="openP()"><span>03</span> Water Resources</div>
+        <div class="chapter-row" onclick="openP()"><span>04</span> Agriculture</div>
+        <div class="chapter-row" onclick="openP()"><span>05</span> Minerals and Energy Resources</div>
+        <div class="chapter-row" onclick="openP()"><span>06</span> Manufacturing Industries</div>
+        <div class="chapter-row" onclick="openP()"><span>07</span> Lifelines of National Economy</div>
+
+        <span class="unit-tag">Civics (Pol. Science)</span>
         <div class="chapter-row" onclick="openP()"><span>01</span> Power Sharing</div>
         <div class="chapter-row" onclick="openP()"><span>02</span> Federalism</div>
+        <div class="chapter-row" onclick="openP()"><span>03</span> Gender, Religion and Caste</div>
+        <div class="chapter-row" onclick="openP()"><span>04</span> Political Parties</div>
+        <div class="chapter-row" onclick="openP()"><span>05</span> Outcomes of Democracy</div>
+
         <span class="unit-tag">Economics</span>
         <div class="chapter-row" onclick="openP()"><span>01</span> Development</div>
-        <div class="chapter-row" onclick="openP()"><span>02</span> Sectors of Indian Economy</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Sectors of the Indian Economy</div>
+        <div class="chapter-row" onclick="openP()"><span>03</span> Money and Credit</div>
+        <div class="chapter-row" onclick="openP()"><span>04</span> Globalization & Indian Economy</div>
+    </div>
+
+    <div id="maths" class="section">
+        <span class="back-nav" onclick="showSection('subjects')">← Back</span>
+        <div class="subject-header">Mathematics</div>
+        <div class="chapter-row" onclick="showSection('real-numbers')"><span>01</span> Real Numbers</div>
+        <div class="chapter-row" onclick="openP()"><span>02</span> Polynomials</div>
+        <div class="chapter-row" onclick="openP()"><span>03</span> Linear Equations</div>
     </div>
 
     <div id="real-numbers" class="section">
-        <span class="back-nav" onclick="showSection('maths')">← CHAPTERS</span>
-        <div class="subject-header">REAL NUMBERS</div>
-        <a href="https://drive.google.com/file/d/1KjANwkFYKwob_ukK2KZ3uqrMA7ewOwgS/view" target="_blank" class="menu-card">
-            <div><h3>DPP 01</h3><p>Important Questions</p></div>
+        <span class="back-nav" onclick="showSection('maths')">← Chapters</span>
+        <div class="subject-header">Real Numbers</div>
+        
+        <a href="https://drive.google.com/file/d/1KjANwkFYKwob_ukK2KZ3uqrMA7ewOwgS/view" target="_blank" class="menu-card dpp-btn">
+            <div><h3>DPP 01</h3><p>Important Daily Practice Paper</p></div>
+            <span>⬇</span>
         </a>
-        <a href="https://drive.google.com/file/d/1DoDAxWnjq4Yg2UMvyT-4wODN3L1xXOV5/view" target="_blank" class="menu-card">
-            <div><h3>DPP 02</h3><p>Previous Year Questions</p></div>
+        
+        <a href="https://drive.google.com/file/d/1DoDAxWnjq4Yg2UMvyT-4wODN3L1xXOV5/view" target="_blank" class="menu-card dpp-btn">
+            <div><h3>DPP 02</h3><p>Previous Year Based Sheet</p></div>
+            <span>⬇</span>
         </a>
     </div>
 
-    <footer style="text-align:center; margin-top:30px; font-size:0.7rem; color:#444;">
-        © 2026 Next Toppers | Academic Session 2026-27
-    </footer>
+    <footer>MADE FOR NEXT TOPPERS | SESSION 2026-27</footer>
 
 </div>
 
 <script>
     function showSection(id) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        window.scrollTo(0,0);
+        const target = document.getElementById(id);
+        if(target) {
+            target.classList.add('active');
+            window.scrollTo(0,0);
+        }
     }
     function openP() { document.getElementById('popup').style.display = 'flex'; }
 </script>
 
 </body>
 </html>
+
