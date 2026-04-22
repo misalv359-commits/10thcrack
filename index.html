@@ -96,7 +96,6 @@
 
     <div id="sci-chapters" class="section">
         <h2>Science Chapters</h2>
-        
         <h3>Chemistry</h3>
         <button class="btn chapter-btn" onclick="show('hub-sci')">Chemical Reactions & Eq.</button>
         <button class="btn chapter-btn" onclick="show('hub-sci')">Acids, Bases & Salts</button>
@@ -115,7 +114,6 @@
         <button class="btn chapter-btn" onclick="show('hub-sci')">Human Eye</button>
         <button class="btn chapter-btn" onclick="show('hub-sci')">Electricity</button>
         <button class="btn chapter-btn" onclick="show('hub-sci')">Magnetic Effects</button>
-
         <div class="back-btn" onclick="show('subjects')">⬅ Back</div>
     </div>
 
@@ -128,23 +126,22 @@
         <div class="back-btn" onclick="show('subjects')">⬅ Back</div>
     </div>
 
-    <div id="sst-hist" class="section"><h2>History</h2><p class="btn">Nationalism in Europe</p><p class="btn">Nationalism in India</p><p class="btn">Global World</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
-    <div id="sst-geo" class="section"><h2>Geography</h2><p class="btn">Resources & Dev</p><p class="btn">Agriculture</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
-    <div id="sst-civ" class="section"><h2>Civics</h2><p class="btn">Power Sharing</p><p class="btn">Political Parties</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
-    <div id="sst-eco" class="section"><h2>Economics</h2><p class="btn">Development</p><p class="btn">Money & Credit</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-hist" class="section"><h2>History</h2><p class="btn">Nationalism in Europe</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-geo" class="section"><h2>Geography</h2><p class="btn">Resources & Dev</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-civ" class="section"><h2>Civics</h2><p class="btn">Power Sharing</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-eco" class="section"><h2>Economics</h2><p class="btn">Development</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
 
     <div id="hub-maths" class="section">
         <h2>Maths Hub</h2>
         <button class="btn" onclick="show('dpp-page')">📂 DPP (Daily Practice)</button>
         <button class="btn" onclick="show('mod-page')">📑 Modules</button>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <div class="back-btn" onclick="show('maths-chapters')">⬅ Back</div>
     </div>
 
     <div id="hub-sci" class="section">
         <h2>Science Hub</h2>
         <button class="btn" onclick="show('acp-page')">📂 ACP (Concept Practice)</button>
-        <button class="btn" onclick="show('mod-page')">📑 Modules</button>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <div class="back-btn" onclick="show('sci-chapters')">⬅ Back</div>
     </div>
 
     <div id="dpp-page" class="section">
@@ -153,7 +150,7 @@
             <a href="#" download class="btn">DPP 01 ⬇</a>
             <a href="#" download class="btn">DPP 02 ⬇</a>
         </div>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <div class="back-btn" onclick="show('hub-maths')">⬅ Back</div>
     </div>
 
     <div id="acp-page" class="section">
@@ -161,15 +158,14 @@
         <div class="grid">
             <a href="#" download class="btn">ACP 01 ⬇</a>
             <a href="#" download class="btn">ACP 02 ⬇</a>
-            <a href="#" download class="btn">ACP 03 ⬇</a>
         </div>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <div class="back-btn" onclick="show('hub-sci')">⬅ Back</div>
     </div>
 
     <div id="mod-page" class="section">
-        <h2>Modules</h2>
+        <h2>Maths Modules</h2>
         <a href="#" download class="btn">Module 1 ⬇</a>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <div class="back-btn" onclick="show('hub-maths')">⬅ Back</div>
     </div>
 
     <footer>Made for Toppers | 10th Crack 2026-27</footer>
