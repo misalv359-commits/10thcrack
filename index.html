@@ -83,9 +83,25 @@
     <div id="study-material" class="section">
         <div class="subject-title">Study Material</div>
         <button class="btn" onclick="showSection('maths-modules-section')">📁 Maths Modules</button>
+
+
         <button class="btn" onclick="showSection('sci-essentials')">🧪 Science Essentials</button>
         <button class="back-btn" onclick="showSection('home')">⬅ Back to Home</button>
     </div>
+        <div id="maths-modules-section" class="section">
+        <div class="subject-title">Maths Modules</div>
+        <div class="sub-heading">Practice Sets</div>
+
+        <a href="Maths-Module-01.pdf" target="_blank" class="chapter-btn" style="text-decoration: none; display: block;">
+            <span>📁</span> Maths Module 01
+        </a>
+
+        <button class="chapter-btn" onclick="openPopup()"><span>📁</span> Maths Module 02</button>
+        <button class="chapter-btn" onclick="openPopup()"><span>📁</span> Maths Module 03</button>
+        
+        <button class="back-btn" onclick="showSection('study-material')">⬅ Back</button>
+    </div>
+
 
         <div id="sci-essentials" class="section">
         <div class="subject-title">Science Essentials</div>
