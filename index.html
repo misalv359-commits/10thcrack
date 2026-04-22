@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10th Crack | Next Toppers</title>
+    <title>10th Crack | Mission 95%+</title>
     <style>
         :root { --bg: #03001e; --primary: #facc15; --secondary: #ec4899; --text: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
@@ -17,36 +17,42 @@
             margin-top: 20px; z-index: 10;
         }
 
-        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text); text-shadow: 0 0 15px var(--primary); margin-bottom: 20px; text-transform: uppercase; }
-        h2 { color: var(--primary); margin: 20px 0; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; }
-        h3 { color: #22d3ee; margin: 15px 0 10px; font-size: 1rem; text-align: left; border-left: 3px solid var(--primary); padding-left: 10px; text-transform: uppercase; }
+        h1 { font-size: 2.2rem; font-weight: 800; color: var(--text); text-shadow: 0 0 15px var(--primary); margin-bottom: 25px; text-transform: uppercase; }
         
+        /* Badi Yellow Heading */
+        .subject-title { color: var(--primary); font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin: 25px 0 15px; border-bottom: 2px solid var(--primary); padding-bottom: 5px; display: inline-block; }
+        
+        /* Cyan Sub-Headings for Science/SST sections */
+        .sub-title { color: #22d3ee; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; margin: 20px 0 10px; text-align: left; padding-left: 10px; border-left: 3px solid #22d3ee; }
+
         .section { display: none; width: 100%; }
         .section.active { display: block !important; animation: fadeIn 0.4s ease-out; }
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Professional Main Buttons */
         .btn { display: block; background: rgba(255, 255, 255, 0.08); color: var(--text); padding: 18px; margin: 12px 0; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; cursor: pointer; width: 100%; text-align: center; }
         .btn:active { transform: scale(0.97); background: rgba(250, 204, 21, 0.2); }
         .btn:hover { border-color: var(--primary); background: rgba(255, 255, 255, 0.15); }
         
-        .back-btn { background: var(--secondary); padding: 12px 25px; font-size: 0.85rem; border-radius: 12px; margin: 25px auto 0; display: inline-block; cursor: pointer; font-weight: bold; border: none; color: white; transition: 0.2s; }
-        .back-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        /* Chapters list - Professional White Style */
+        .chapter-btn { background: none; border: 1px solid rgba(255,255,255,0.15); color: #fff; text-align: left; padding: 16px; margin: 8px 0; font-size: 1rem; font-weight: 500; border-radius: 12px; display: flex; align-items: center; }
+        .chapter-btn:hover { background: rgba(255,255,255,0.05); border-color: #fff; box-shadow: 0 4px 15px rgba(255,255,255,0.05); }
 
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
-        .chapter-btn { font-size: 0.7rem; padding: 12px 8px; min-height: 60px; display: flex; align-items: center; justify-content: center; line-height: 1.3; text-align: center; border-radius: 12px; }
+        .back-btn { background: var(--secondary); padding: 12px 25px; font-size: 0.85rem; border-radius: 12px; margin: 25px auto 0; display: inline-block; cursor: pointer; font-weight: bold; border: none; color: white; }
 
+        /* Material Content Popup */
         #popupOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(12px); z-index: 10000; justify-content: center; align-items: center; }
-        .popup { background: #111; border: 2px solid var(--primary); padding: 35px; border-radius: 25px; width: 85%; max-width: 340px; text-align: center; box-shadow: 0 0 40px rgba(250, 204, 21, 0.3); }
+        .popup { background: #111; border: 2px solid var(--primary); padding: 35px; border-radius: 25px; width: 85%; max-width: 340px; text-align: center; }
 
-        footer { margin-top: 40px; color: #64748b; font-size: 0.75rem; letter-spacing: 0.5px; padding-bottom: 20px; }
+        footer { margin-top: 40px; color: #64748b; font-size: 0.75rem; padding-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <div id="popupOverlay" onclick="closePopup()">
     <div class="popup" onclick="event.stopPropagation()">
-        <p style="font-size: 1.3rem; font-weight: bold; color: #fff; margin-bottom: 20px;">Oye Ladle! 👻<br><br>Coming soon..! <br>Tab tak tu padhai krle ladle 👻</p>
+        <p style="font-size: 1.3rem; font-weight: bold; color: #fff; margin-bottom: 20px;">Oye Ladle! 👻<br><br>Content is being uploaded...<br>Tab tak tu padhai krle ladle 👻</p>
         <button class="btn" style="background: var(--primary); color: #000; border:none;" onclick="closePopup()">Ok Bhai!</button>
     </div>
 </div>
@@ -74,118 +80,35 @@
     </div>
 
     <div id="sci-essentials-select" class="section">
-        <h2>SELECT SUBJECT 😎</h2>
-        <button class="btn" onclick="showSection('bio-essentials')">🧬 Biology</button>
-        <button class="btn" onclick="showSection('chem-essentials')">🧪 Chemistry</button>
-        <button class="btn" onclick="showSection('phy-essentials')">⚡ Physics</button>
+        <div class="subject-title">SCIENCE ESSENTIALS</div>
+        <button class="btn" onclick="showSection('bio-essentials')">🧬 Biology Folders</button>
+        <button class="btn" onclick="showSection('chem-essentials')">🧪 Chemistry Folders</button>
+        <button class="btn" onclick="showSection('phy-essentials')">⚡ Physics Folders</button>
         <button class="back-btn" onclick="showSection('study-material')">⬅ Back</button>
     </div>
 
-    <div id="bio-essentials" class="section">
-        <h2>🧬 Bio Essentials</h2>
-        <button class="btn" onclick="openPopup()">📑 Equations</button>
-        <button class="btn" onclick="openPopup()">🧪 Activities</button>
-        <button class="btn" onclick="openPopup()">🎨 Important Diagrams</button>
-        <button class="back-btn" onclick="showSection('sci-essentials-select')">⬅ Back</button>
-    </div>
-
-    <div id="chem-essentials" class="section">
-        <h2>🧪 Chem Essentials</h2>
-        <button class="btn" onclick="openPopup()">⚗️ Chemical Equations</button>
-        <button class="btn" onclick="openPopup()">📏 Formulas</button>
-        <button class="btn" onclick="openPopup()">👨‍🔬 Lab Activities</button>
-        <button class="btn" onclick="openPopup()">📊 Periodic Table</button>
-        <button class="back-btn" onclick="showSection('sci-essentials-select')">⬅ Back</button>
-    </div>
-
-    <div id="phy-essentials" class="section">
-        <h2>⚡ Physics Essentials</h2>
-        <button class="btn" onclick="openPopup()">📏 Formulas</button>
-        <button class="btn" onclick="openPopup()">💡 Activities</button>
-        <button class="btn" onclick="openPopup()">📜 Theorems</button>
-        <button class="btn" onclick="openPopup()">📑 Equations</button>
-        <button class="btn" onclick="openPopup()">📐 Diagrams</button>
-        <button class="back-btn" onclick="showSection('sci-essentials-select')">⬅ Back</button>
-    </div>
-
     <div id="maths-chapters" class="section">
-        <h2>Maths Chapters</h2>
-        <div class="grid">
-            <button class="btn chapter-btn" onclick="showSection('hub-real-numbers')">1. Real Numbers</button>
-            <button class="btn chapter-btn" onclick="openPopup()">2. Polynomials</button>
-            <button class="btn chapter-btn" onclick="openPopup()">3. Linear Equations</button>
-            <button class="btn chapter-btn" onclick="openPopup()">4. Quadratic Eq.</button>
-            <button class="btn chapter-btn" onclick="openPopup()">5. Arithmetic Prog.</button>
-            <button class="btn chapter-btn" onclick="openPopup()">6. Triangles</button>
-            <button class="btn chapter-btn" onclick="openPopup()">7. Coordinate Geo</button>
-            <button class="btn chapter-btn" onclick="openPopup()">8. Trigonometry</button>
-            <button class="btn chapter-btn" onclick="openPopup()">9. App. of Trig</button>
-            <button class="btn chapter-btn" onclick="openPopup()">10. Circles</button>
-            <button class="btn chapter-btn" onclick="openPopup()">11. Areas Circles</button>
-            <button class="btn chapter-btn" onclick="openPopup()">12. Surf. Area Vol</button>
-            <button class="btn chapter-btn" onclick="openPopup()">13. Statistics</button>
-            <button class="btn chapter-btn" onclick="openPopup()">14. Probability</button>
-        </div>
+        <div class="subject-title">MATHEMATICS</div>
+        <button class="chapter-btn" onclick="showSection('hub-real-numbers')">01. Real Numbers</button>
+        <button class="chapter-btn" onclick="openPopup()">02. Polynomials</button>
+        <button class="chapter-btn" onclick="openPopup()">03. Pair of Linear Equations</button>
+        <button class="chapter-btn" onclick="openPopup()">04. Quadratic Equations</button>
+        <button class="chapter-btn" onclick="openPopup()">05. Arithmetic Progressions</button>
+        <button class="chapter-btn" onclick="openPopup()">06. Triangles</button>
+        <button class="chapter-btn" onclick="openPopup()">07. Coordinate Geometry</button>
+        <button class="chapter-btn" onclick="openPopup()">08. Introduction to Trigonometry</button>
+        <button class="chapter-btn" onclick="openPopup()">09. Some App. of Trigonometry</button>
+        <button class="chapter-btn" onclick="openPopup()">10. Circles</button>
+        <button class="chapter-btn" onclick="openPopup()">11. Areas Related to Circles</button>
+        <button class="chapter-btn" onclick="openPopup()">12. Surface Areas & Volumes</button>
+        <button class="chapter-btn" onclick="openPopup()">13. Statistics</button>
+        <button class="chapter-btn" onclick="openPopup()">14. Probability</button>
         <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
     </div>
 
     <div id="sci-chapters" class="section">
-        <h2>Science Chapters</h2>
-        <div class="grid">
-            <button class="btn chapter-btn" onclick="openPopup()">1. Chem Reaction</button>
-            <button class="btn chapter-btn" onclick="openPopup()">2. Acid Base Salt</button>
-            <button class="btn chapter-btn" onclick="openPopup()">3. Metals NonMetals</button>
-            <button class="btn chapter-btn" onclick="openPopup()">4. Carbon Comp.</button>
-            <button class="btn chapter-btn" onclick="openPopup()">5. Life Processes</button>
-            <button class="btn chapter-btn" onclick="openPopup()">6. Control Coord.</button>
-            <button class="btn chapter-btn" onclick="openPopup()">7. Reproduction</button>
-            <button class="btn chapter-btn" onclick="openPopup()">8. Heredity</button>
-            <button class="btn chapter-btn" onclick="openPopup()">9. Light Reflect.</button>
-            <button class="btn chapter-btn" onclick="openPopup()">10. Human Eye</button>
-            <button class="btn chapter-btn" onclick="openPopup()">11. Electricity</button>
-            <button class="btn chapter-btn" onclick="openPopup()">12. Mag. Effects</button>
-            <button class="btn chapter-btn" onclick="openPopup()">13. Environment</button>
-        </div>
-        <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
-    </div>
-
-    <div id="sst-chapters" class="section">
-        <h2>SST Chapters</h2>
-        <div class="grid">
-            <button class="btn chapter-btn" onclick="openPopup()">Hist 1. Europe</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Hist 2. India</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Geo 1. Resources</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Geo 4. Agriculture</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Civ 1. Power Sharing</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Civ 2. Federalism</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Eco 1. Development</button>
-            <button class="btn chapter-btn" onclick="openPopup()">Eco 2. Sectors</button>
-        </div>
-        <button class="back-btn" onclick="showSection('subjects')">⬅ Back</button>
-    </div>
-
-    <div id="hub-real-numbers" class="section">
-        <h2>Real Numbers DPPs</h2>
-        <a href="https://drive.google.com/file/d/1KjANwkFYKwob_ukK2KZ3uqrMA7ewOwgS/view" target="_blank" class="btn">📂 DPP 01: Real Numbers ⬇</a>
-        <a href="https://drive.google.com/file/d/1DoDAxWnjq4Yg2UMvyT-4wODN3L1xXOV5/view" target="_blank" class="btn">📂 DPP 02: Real Numbers ⬇</a>
-        <button class="back-btn" onclick="showSection('maths-chapters')">⬅ Back</button>
-    </div>
-
-    <footer>Made for Next Toppers students | 2026-27</footer>
-</div>
-
-<script>
-    function showSection(id) {
-        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-        const target = document.getElementById(id);
-        if(target) {
-            target.classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-    }
-    function openPopup() { document.getElementById('popupOverlay').style.display = 'flex'; }
-    function closePopup() { document.getElementById('popupOverlay').style.display = 'none'; }
-</script>
-
-</body>
-</html>
+        <div class="subject-title">SCIENCE</div>
+        
+        <div class="sub-title">Chemistry</div>
+        <button class="chapter-btn" onclick="openPopup()">01. Chemical Reactions & Eq.</button>
+        <button class="chapter-btn" onclick="openPopup()">0
