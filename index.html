@@ -13,7 +13,6 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
         
-        /* ORIGINAL INTERIOR BACKGROUND EFFECTS */
         body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; overflow-x: hidden; }
         body::before { content: ''; position: fixed; width: 300px; height: 300px; background: rgba(236, 72, 153, 0.4); filter: blur(100px); top: 10%; left: 10%; z-index: -1; }
         body::after { content: ''; position: fixed; width: 300px; height: 300px; background: rgba(250, 204, 21, 0.3); filter: blur(100px); bottom: 10%; right: 10%; z-index: -1; }
@@ -38,6 +37,7 @@
 
         h1 { font-size: 3rem; font-weight: 800; color: var(--text); text-shadow: 0 0 15px var(--primary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
         h2 { color: var(--primary); margin: 20px 0; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; }
+        h3 { color: #22d3ee; margin: 15px 0 5px; font-size: 1.1rem; text-align: left; }
         
         .section { display: none; animation: fadeIn 0.4s ease; }
         .section.active { display: block; }
@@ -53,7 +53,6 @@
 
         footer { margin-top: 40px; color: #64748b; font-size: 0.8rem; letter-spacing: 1px; }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -68,30 +67,55 @@
     <div id="subjects" class="section">
         <h2>Select Subject 😎</h2>
         <button class="btn" onclick="show('maths-chapters')">🔢 Maths</button>
+        <button class="btn" onclick="show('sci-chapters')">📖 Science</button>
         <button class="btn" onclick="show('sst-categories')">🌍 SST</button>
-        <button class="btn" onclick="alert('Science Coming Soon!')">📖 Science</button>
         <div class="back-btn" onclick="show('home')">⬅ Back</div>
     </div>
 
     <div id="maths-chapters" class="section">
         <h2>Maths Chapters</h2>
         <div class="grid">
-            <button class="btn chapter-btn" onclick="show('hub-gen')">1. Real Numbers</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">2. Polynomials</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">3. Pair of Linear Eq.</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">4. Quadratic Eq.</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">5. Arithmetic Progressions</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">6. Triangles</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">7. Coordinate Geometry</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">8. Trigonometry</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">9. Identities</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">10. Height & Dist.</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">11. Circles</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">12. Area Circles</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">13. Surface Area</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">14. Statistics</button>
-            <button class="btn chapter-btn" onclick="show('hub-gen')">15. Probability</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">1. Real Numbers</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">2. Polynomials</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">3. Pair of Linear Eq.</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">4. Quadratic Eq.</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">5. Arithmetic Progressions</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">6. Triangles</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">7. Coordinate Geometry</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">8. Trigonometry</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">9. Identities</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">10. Height & Dist.</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">11. Circles</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">12. Area Circles</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">13. Surface Area</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">14. Statistics</button>
+            <button class="btn chapter-btn" onclick="show('hub-maths')">15. Probability</button>
         </div>
+        <div class="back-btn" onclick="show('subjects')">⬅ Back</div>
+    </div>
+
+    <div id="sci-chapters" class="section">
+        <h2>Science Chapters</h2>
+        
+        <h3>Chemistry</h3>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Chemical Reactions & Eq.</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Acids, Bases & Salts</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Metals & Non-metals</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Carbon & its Compounds</button>
+
+        <h3>Biology</h3>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Life Processes</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Control & Coordination</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">How do Organisms Reproduce</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Heredity & Evolution</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Our Environment</button>
+
+        <h3>Physics</h3>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Light - Reflection</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Human Eye</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Electricity</button>
+        <button class="btn chapter-btn" onclick="show('hub-sci')">Magnetic Effects</button>
+
         <div class="back-btn" onclick="show('subjects')">⬅ Back</div>
     </div>
 
@@ -104,37 +128,48 @@
         <div class="back-btn" onclick="show('subjects')">⬅ Back</div>
     </div>
 
-    <div id="sst-hist" class="section">
-        <h2>History</h2>
-        <p class="btn">Nationalism in Europe</p><p class="btn">Nationalism in India</p><p class="btn">Global World</p><p class="btn">Industrialisation</p><p class="btn">Print Culture</p>
-        <div class="back-btn" onclick="show('sst-categories')">⬅ Back</div>
-    </div>
-    <div id="sst-geo" class="section"><h2>Geography</h2><p class="btn">Resources & Dev</p><p class="btn">Forest & Wildlife</p><p class="btn">Water Resources</p><p class="btn">Agriculture</p><p class="btn">Minerals</p><p class="btn">Manufacturing</p><p class="btn">Lifelines</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
-    <div id="sst-civ" class="section"><h2>Civics</h2><p class="btn">Power Sharing</p><p class="btn">Federalism</p><p class="btn">Democracy & Diversity</p><p class="btn">Gender & Caste</p><p class="btn">Struggles</p><p class="btn">Parties</p><p class="btn">Outcomes</p><p class="btn">Challenges</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
-    <div id="sst-eco" class="section"><h2>Economics</h2><p class="btn">Development</p><p class="btn">Indian Economy</p><p class="btn">Money & Credit</p><p class="btn">Globalisation</p><p class="btn">Consumer Rights</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-hist" class="section"><h2>History</h2><p class="btn">Nationalism in Europe</p><p class="btn">Nationalism in India</p><p class="btn">Global World</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-geo" class="section"><h2>Geography</h2><p class="btn">Resources & Dev</p><p class="btn">Agriculture</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-civ" class="section"><h2>Civics</h2><p class="btn">Power Sharing</p><p class="btn">Political Parties</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
+    <div id="sst-eco" class="section"><h2>Economics</h2><p class="btn">Development</p><p class="btn">Money & Credit</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
 
-    <div id="hub-gen" class="section">
-        <h2>Chapter Content</h2>
+    <div id="hub-maths" class="section">
+        <h2>Maths Hub</h2>
         <button class="btn" onclick="show('dpp-page')">📂 DPP (Daily Practice)</button>
         <button class="btn" onclick="show('mod-page')">📑 Modules</button>
-        <div class="back-btn" onclick="show('maths-chapters')">⬅ Back</div>
+        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+    </div>
+
+    <div id="hub-sci" class="section">
+        <h2>Science Hub</h2>
+        <button class="btn" onclick="show('acp-page')">📂 ACP (Concept Practice)</button>
+        <button class="btn" onclick="show('mod-page')">📑 Modules</button>
+        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
     </div>
 
     <div id="dpp-page" class="section">
-        <h2>Daily Practice</h2>
+        <h2>DPP List</h2>
         <div class="grid">
             <a href="#" download class="btn">DPP 01 ⬇</a>
             <a href="#" download class="btn">DPP 02 ⬇</a>
-            <a href="#" download class="btn">DPP 03 ⬇</a>
         </div>
-        <div class="back-btn" onclick="show('hub-gen')">⬅ Back</div>
+        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+    </div>
+
+    <div id="acp-page" class="section">
+        <h2>ACP List</h2>
+        <div class="grid">
+            <a href="#" download class="btn">ACP 01 ⬇</a>
+            <a href="#" download class="btn">ACP 02 ⬇</a>
+            <a href="#" download class="btn">ACP 03 ⬇</a>
+        </div>
+        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
     </div>
 
     <div id="mod-page" class="section">
-        <h2>Chapter Modules</h2>
+        <h2>Modules</h2>
         <a href="#" download class="btn">Module 1 ⬇</a>
-        <a href="#" download class="btn">Module 2 ⬇</a>
-        <div class="back-btn" onclick="show('hub-gen')">⬅ Back</div>
+        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
     </div>
 
     <footer>Made for Toppers | 10th Crack 2026-27</footer>
