@@ -5,46 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10th Crack | Mission 95%+</title>
     <style>
-        :root { --bg: #03001e; --primary: #facc15; --secondary: #ec4899; --text: #ffffff; }
+        :root {
+            --bg: #03001e;
+            --primary: #facc15; 
+            --secondary: #ec4899; 
+            --text: #ffffff;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; overflow-x: hidden; }
         
-        body::before { content: ''; position: fixed; width: 250px; height: 250px; background: rgba(236, 72, 153, 0.4); filter: blur(100px); top: 10%; left: 10%; z-index: -1; }
-        body::after { content: ''; position: fixed; width: 250px; height: 250px; background: rgba(250, 204, 21, 0.3); filter: blur(100px); bottom: 10%; right: 10%; z-index: -1; }
+        /* ORIGINAL INTERIOR BACKGROUND EFFECTS */
+        body { background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; width: 300px; height: 300px; background: rgba(236, 72, 153, 0.4); filter: blur(100px); top: 10%; left: 10%; z-index: -1; }
+        body::after { content: ''; position: fixed; width: 300px; height: 300px; background: rgba(250, 204, 21, 0.3); filter: blur(100px); bottom: 10%; right: 10%; z-index: -1; }
 
-        .container { 
-            position: relative; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); 
-            border: 2px solid rgba(255, 255, 255, 0.1); padding: 30px 15px; border-radius: 30px; 
-            width: 100%; max-width: 500px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
-            max-height: 90vh; overflow-y: auto;
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            max-height: 85vh;
+            overflow-y: auto;
         }
         .container::-webkit-scrollbar { width: 5px; }
         .container::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        .container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--secondary), var(--primary), var(--secondary)); }
 
-        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text); text-shadow: 0 0 15px var(--primary); margin-bottom: 10px; }
-        h2 { color: var(--primary); margin: 15px 0; font-size: 1.4rem; text-transform: uppercase; }
+        h1 { font-size: 3rem; font-weight: 800; color: var(--text); text-shadow: 0 0 15px var(--primary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: var(--primary); margin: 20px 0; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; }
         
-        .section { display: none; animation: fadeIn 0.3s ease; }
+        .section { display: none; animation: fadeIn 0.4s ease; }
         .section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .btn { display: block; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 15px; margin: 10px 0; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: 0.3s; cursor: pointer; text-align: center; }
-        .btn:hover { border-color: var(--primary); box-shadow: 0 0 15px var(--primary); transform: scale(1.02); background: rgba(250, 204, 21, 0.1); }
+        .btn { display: block; background: rgba(255, 255, 255, 0.05); color: var(--text); padding: 18px; margin: 12px 0; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s ease; cursor: pointer; }
+        .btn:hover { border-color: var(--primary); box-shadow: 0 0 20px var(--primary); transform: translateY(-3px); background: rgba(250, 204, 21, 0.1); }
         
-        .back-btn { background: var(--secondary); padding: 8px 15px; font-size: 0.8rem; border-radius: 8px; margin: 15px auto; display: inline-block; cursor: pointer; }
+        .back-btn { background: var(--secondary); padding: 10px 20px; font-size: 0.8rem; border-radius: 10px; margin: 20px auto 0; display: inline-block; cursor: pointer; font-weight: bold; }
         
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .chapter-btn { font-size: 0.85rem; padding: 12px 5px; height: 100%; display: flex; align-items: center; justify-content: center; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+        .chapter-btn { font-size: 0.8rem; padding: 15px 5px; line-height: 1.2; display: flex; align-items: center; justify-content: center; min-height: 60px; }
+
+        footer { margin-top: 40px; color: #64748b; font-size: 0.8rem; letter-spacing: 1px; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
     <div id="home" class="section active">
         <h1>🚀 10th Crack</h1>
-        <p style="color: #cbd5e1; margin-bottom: 20px;">Board Exams ko fodna hai! 🔥</p>
+        <p style="font-style: italic; color: #cbd5e1; margin-bottom: 30px;">Board Exams ko fodna hai, 95%+ laakar record todna hai! 🔥</p>
         <button class="btn" onclick="show('subjects')">🔥 Daily Important Questions</button>
-        <button class="btn" onclick="alert('Coming Soon!')">📚 Study Material</button>
+        <button class="btn" onclick="alert('Study Material Coming Soon!')">📚 Study Material</button>
     </div>
 
     <div id="subjects" class="section">
@@ -58,21 +76,21 @@
     <div id="maths-chapters" class="section">
         <h2>Maths Chapters</h2>
         <div class="grid">
-            <button class="btn chapter-btn" onclick="show('hub-1')">1. Real Numbers</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">2. Polynomials</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">3. Linear Eq.</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">4. Quadratic Eq.</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">5. AP</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">6. Triangles</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">7. Coordinate</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">8. Trigonometry</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">9. Identities</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">10. Height & Dist.</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">11. Circles</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">12. Area Circles</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">13. Surface Area</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">14. Statistics</button>
-            <button class="btn chapter-btn" onclick="show('hub-generic')">15. Probability</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">1. Real Numbers</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">2. Polynomials</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">3. Pair of Linear Eq.</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">4. Quadratic Eq.</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">5. Arithmetic Progressions</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">6. Triangles</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">7. Coordinate Geometry</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">8. Trigonometry</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">9. Identities</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">10. Height & Dist.</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">11. Circles</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">12. Area Circles</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">13. Surface Area</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">14. Statistics</button>
+            <button class="btn chapter-btn" onclick="show('hub-gen')">15. Probability</button>
         </div>
         <div class="back-btn" onclick="show('subjects')">⬅ Back</div>
     </div>
@@ -88,23 +106,15 @@
 
     <div id="sst-hist" class="section">
         <h2>History</h2>
-        <p class="btn">Nationalism in Europe</p><p class="btn">Nationalism in India</p>
-        <p class="btn">Global World</p><p class="btn">Industrialisation</p><p class="btn">Print Culture</p>
+        <p class="btn">Nationalism in Europe</p><p class="btn">Nationalism in India</p><p class="btn">Global World</p><p class="btn">Industrialisation</p><p class="btn">Print Culture</p>
         <div class="back-btn" onclick="show('sst-categories')">⬅ Back</div>
     </div>
     <div id="sst-geo" class="section"><h2>Geography</h2><p class="btn">Resources & Dev</p><p class="btn">Forest & Wildlife</p><p class="btn">Water Resources</p><p class="btn">Agriculture</p><p class="btn">Minerals</p><p class="btn">Manufacturing</p><p class="btn">Lifelines</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
     <div id="sst-civ" class="section"><h2>Civics</h2><p class="btn">Power Sharing</p><p class="btn">Federalism</p><p class="btn">Democracy & Diversity</p><p class="btn">Gender & Caste</p><p class="btn">Struggles</p><p class="btn">Parties</p><p class="btn">Outcomes</p><p class="btn">Challenges</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
     <div id="sst-eco" class="section"><h2>Economics</h2><p class="btn">Development</p><p class="btn">Indian Economy</p><p class="btn">Money & Credit</p><p class="btn">Globalisation</p><p class="btn">Consumer Rights</p><div class="back-btn" onclick="show('sst-categories')">⬅ Back</div></div>
 
-    <div id="hub-1" class="section">
-        <h2>Real Numbers</h2>
-        <button class="btn" onclick="show('dpp-page')">📂 DPP (Daily Practice)</button>
-        <button class="btn" onclick="show('mod-page')">📑 Modules</button>
-        <div class="back-btn" onclick="show('maths-chapters')">⬅ Back</div>
-    </div>
-    
-    <div id="hub-generic" class="section">
-        <h2>Chapter Hub</h2>
+    <div id="hub-gen" class="section">
+        <h2>Chapter Content</h2>
         <button class="btn" onclick="show('dpp-page')">📂 DPP (Daily Practice)</button>
         <button class="btn" onclick="show('mod-page')">📑 Modules</button>
         <div class="back-btn" onclick="show('maths-chapters')">⬅ Back</div>
@@ -117,14 +127,14 @@
             <a href="#" download class="btn">DPP 02 ⬇</a>
             <a href="#" download class="btn">DPP 03 ⬇</a>
         </div>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <div class="back-btn" onclick="show('hub-gen')">⬅ Back</div>
     </div>
 
     <div id="mod-page" class="section">
         <h2>Chapter Modules</h2>
-        <a href="#" download class="btn">Module 1 (Basics) ⬇</a>
-        <a href="#" download class="btn">Module 2 (Pro) ⬇</a>
-        <div class="back-btn" onclick="window.history.back()">⬅ Back</div>
+        <a href="#" download class="btn">Module 1 ⬇</a>
+        <a href="#" download class="btn">Module 2 ⬇</a>
+        <div class="back-btn" onclick="show('hub-gen')">⬅ Back</div>
     </div>
 
     <footer>Made for Toppers | 10th Crack 2026-27</footer>
