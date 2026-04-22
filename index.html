@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10th Crack | Mission 95%+</title>
+    <style>
+        :root {
+            --bg: #03001e;
+            --primary: #facc15; /* Yellow Neon */
+            --secondary: #ec4899; /* Pink Neon */
+            --text: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; width: 200px; height: 200px; background: rgba(236, 72, 153, 0.4); filter: blur(100px); top: 10%; left: 10%; }
+        body::after { content: ''; position: fixed; width: 200px; height: 200px; background: rgba(250, 204, 21, 0.3); filter: blur(100px); bottom: 10%; right: 10%; }
+
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 50px 30px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        .container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--secondary), var(--primary), var(--secondary)); }
+
+        h1 { font-size: 3.5rem; font-weight: 800; color: var(--text); text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .quote-box { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; margin-bottom: 40px; border-left: 4px solid var(--secondary); }
+        p.moto { font-style: italic; color: #cbd5e1; font-size: 1.1rem; }
+
+        .section-title { font-size: 1.5rem; text-align: left; margin-bottom: 15px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; }
+
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .btn { position: relative; background: rgba(255, 255, 255, 0.05); color: var(--text); padding: 20px; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s ease; display: flex; align-items: center; justify-content: center; gap: 10px; overflow: hidden; }
+        
+        /* Neon Effects on Hover */
+        .btn:hover { border-color: var(--primary); box-shadow: 0 0 15px var(--primary); transform: translateY(-5px); background: rgba(250, 204, 21, 0.1); }
+        .btn.notes:hover { border-color: #22d3ee; box-shadow: 0 0 15px #22d3ee; background: rgba(34, 211, 238, 0.1); }
+        .btn.motivation:hover { border-color: var(--secondary); box-shadow: 0 0 15px var(--secondary); background: rgba(236, 72, 153, 0.1); }
+
+        .motivation-zone { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 20px; margin-top: 20px; }
+        .motivation-zone h3 { color: var(--secondary); margin-bottom: 15px; font-size: 1.6rem; text-shadow: 0 0 5px var(--secondary); }
+        .motivation-zone ul { text-align: left; list-style: none; color: #cbd5e1; }
+        .motivation-zone li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .motivation-zone li::before { content: '⚡'; position: absolute; left: 0; color: var(--primary); }
+
+        footer { margin-top: 50px; color: #64748b; font-size: 0.9rem; letter-spacing: 1px; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .btn-group { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 10th Crack</h1>
+        <div class="quote-box">
+            <p class="moto">"Board Exams ko fodna hai, 95%+ laakar record todna hai! 🔥"</p>
+        </div>
+
+        <h2 class="section-title">📚 Study Material</h2>
+        <div class="btn-group">
+            <a href="#" class="btn notes"><span>📖</span>Science Notes</a>
+            <a href="#" class="btn notes"><span>🔢</span>Maths formulas</a>
+            <a href="#" class="btn notes"><span>🌍</span>SST Notes</a>
+            <a href="#" class="btn notes"><span>📝</span>Important Questions</a>
+        </div>
+
+        <div class="motivation-zone">
+            <h3>💪 Success Mindset</h3>
+            <ul>
+                <li>Concentration kaise badhayein? Full Tips.</li>
+                <li>Kaise topper apni revision karte hain? Success Secrets.</li>
+                <li>Exam Stress ko kaise handle karein? Mind Tricks.</li>
+            </ul>
+            <a href="#" class="btn motivation" style="margin-top: 20px;">Open Motivation Zone</a>
+        </div>
+
+        <footer>Made for Toppers | 10th Crack 2024</footer>
+    </div>
+</body>
+</html>
